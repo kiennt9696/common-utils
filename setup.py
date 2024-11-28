@@ -17,6 +17,7 @@ setup(
     install_requires=[
         "pyjwt==2.4.0",
         "PyYAML==6.0.2",
-        "flask==3.1.0"
+        "flask==3.1.0",
+        "cryptography==41.0.6"
     ],
 )
