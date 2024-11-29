@@ -26,3 +26,10 @@ def verify_token(token, public_key):
     except Exception:
         raise InvalidToken()
     return data
+
+
+def get_current_user(token, public_key: str) -> str:
+    token = jwt.decode(
+        token, public_key.encode(), algorithms="RS256", options={"verify_aud": False}
+    )
+    return token
