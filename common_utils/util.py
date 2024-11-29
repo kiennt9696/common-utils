@@ -7,16 +7,14 @@ def normpath(path):
 
 
 def load_yaml_file(config_file):
-    with open(config_file, 'r') as f:
+    with open(config_file, "r") as f:
         return yaml.safe_load(f.read())
 
 
 def is_path_value(value):
-    """Return True if the the value is a path which starts with path:
-
-    """
+    """Return True if the the value is a path which starts with path:"""
     if isinstance(value, str):
-        return value.startswith('path:')
+        return value.startswith("path:")
     return False
 
 
@@ -32,7 +30,7 @@ def load_config_from_yaml_file(config_file):
 
     """
     if not os.path.isabs(config_file):
-        raise Exception('Config file MUST be given in absolute form')
+        raise Exception("Config file MUST be given in absolute form")
     config_dir = os.path.dirname(config_file)
     config = load_yaml_file(config_file)
     for key in config:
